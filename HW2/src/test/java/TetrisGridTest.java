@@ -21,11 +21,27 @@ public class TetrisGridTest {
 			{true, false, false},
 			{false, true, false}
 		};
+
+        boolean[][] truoc = {
+                {false, true, true},
+                {true,  true, true},
+                {true,  true, true}
+        };
+
+        boolean[][] sau = {
+                {false, false, false},
+                {true,  false, false},
+                {true,  false, false}
+        };
 		
 		TetrisGrid tetris = new TetrisGrid(before);
+        TetrisGrid tetris2 = new TetrisGrid(truoc);
+
 		tetris.clearRows();
+        tetris2.clearRows();
 
 		assertTrue( Arrays.deepEquals(after, tetris.getGrid()) );
+        assertTrue( Arrays.deepEquals(sau, tetris2.getGrid()) );
 	}
 	
 }
